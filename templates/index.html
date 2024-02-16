@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Scraper</title>
+</head>
+<body>
+    <form action="/" method="post">
+        <input type="text" name="keywords" placeholder="Enter product keywords">
+        <input type="submit" value="Search">
+    </form>
+
+    {% if products %}
+        <table>
+            <tr>
+                <th>Product Name</th>
+                <th>Price</th>
+                <!-- Add more headers based on product features -->
+            </tr>
+            {% for product in products %}
+                <tr>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price }}</td>
+                    <!-- Add more product features here -->
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+</body>
+</html>
